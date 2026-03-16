@@ -1,0 +1,6 @@
+date,region,sales,category
+2024-01-01,West,100,A
+2024-01-02,West,120,B
+2024-01-03,East,90,A
+2024-01-04,East,,B
+2024-01-05,West,200,A
