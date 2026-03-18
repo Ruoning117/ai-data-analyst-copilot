@@ -1,26 +1,36 @@
 # AI Data Analyst Copilot
 
-A Streamlit-based data analysis tool that allows users to upload datasets and instantly generate basic profiling summaries such as missing values, duplicate rows, and column data types.
+A Streamlit-based data analysis tool that allows users to upload datasets and automatically generate data quality checks, visualizations, and outlier detection for messy business data.
 
 This project is part of my effort to build practical AI-assisted tools for exploratory data analysis.
-
----
-
-## Demo
-
-![App Demo](docs/app_demo.png)
 
 ---
 
 ## Features
 
 - Upload a CSV dataset
-- Automatically generate dataset profiling
-- Display:
+- Automatic dataset profiling:
   - number of rows and columns
   - missing values per column
   - duplicate rows
   - column data types
+
+- Data quality warnings:
+  - columns with missing values
+  - high-missingness columns
+  - duplicate row detection
+  - constant-value columns
+
+- Missing data visualization:
+  - bar chart of missing values per column
+
+- Automatic visualizations:
+  - numeric column distributions (histograms)
+  - categorical value counts (bar charts)
+
+- Outlier detection:
+  - identifies potential outliers using IQR method
+  - summarizes outlier counts by column
 
 ---
 
@@ -30,28 +40,6 @@ This project is part of my effort to build practical AI-assisted tools for explo
 - Streamlit
 - Pandas
 - uv (Python package manager)
-
----
-
-## Project Structure
-
-```
-ai-data-analyst-copilot/
-│
-├── main.py                # Streamlit app entry point
-├── src/
-│   └── data_profile.py    # Data profiling logic
-│
-├── data/
-│   └── sample_data.csv    # Example dataset
-│
-├── docs/
-│   └── app_demo.png       # App screenshot
-│
-├── pyproject.toml         # Project dependencies
-├── uv.lock                # Dependency lockfile
-└── README.md
-```
 
 ---
 
@@ -85,7 +73,8 @@ http://localhost:8501
 
 ## Future Improvements
 
-- Add visualization of distributions
-- Generate automatic insights using LLMs
+- Generate automatic insights and summaries using LLMs
+- Allow users to ask questions in natural language
 - Support Excel file uploads
-- Export profiling report
+- Export a clean analysis report (PDF or HTML)
+- Add time-series analysis and trend detection
